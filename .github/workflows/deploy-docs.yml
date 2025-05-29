@@ -23,6 +23,11 @@ jobs:
       run: |
         poetry install --with docs
 
+    - name: Check installed versions
+      run: |
+        poetry show mkdocstrings-python
+        poetry show griffe
+
     - name: Build documentation.
       run: |
         echo ${{ secrets.GH_TOKEN }} >> src/pheval/token.txt
